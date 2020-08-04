@@ -86,7 +86,7 @@ def article_csv_maker(list_of_dicts):
     print("Results store in CSV files")
 
 def store_to_db(list_of_dicts):
-    myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+    myclient = pymongo.MongoClient("mongodb://mongo:27017/")
     mydb = myclient["donortrackerdb"]
     mycol = mydb["article_results"]
 

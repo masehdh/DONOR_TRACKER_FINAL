@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectDB = () => {
-  mongoose.connect("mongodb://localhost:27017/donortrackerdb", {
+  mongoose.connect("mongodb://mongo:27017/donortrackerdb", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

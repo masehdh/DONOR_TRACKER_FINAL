@@ -7,7 +7,7 @@
     "start": "node server/index.js",
     "dev": "nodemon server/index.js"
   },
-  "author": "Shareef Hadid",
+  "author": "Maseh Hadaf",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

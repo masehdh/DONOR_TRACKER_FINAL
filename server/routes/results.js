@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const connectDB = require("../scripts/connectDB");
 const SearchTerm = require("../models/SearchTerm");
 const Result = require("../models/Result");
@@ -20,9 +19,9 @@ router.get("/search", async (req, res) => {
     res.status(200);
     res.send(await donor_tracker());
   } catch (err) {
-      res.status(500);
-      res.send(err);
-    };
+    res.status(500);
+    res.send(err);
+  };
 });
 
 // Add Result
