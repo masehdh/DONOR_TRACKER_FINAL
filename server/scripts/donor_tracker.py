@@ -125,7 +125,11 @@ def mlat_scraper(dict_of_links, list_of_countries, filename = 'multilat'):
   #     dataframe.to_excel(writer, sheet_name=f'{mlat}-{date}', index=False)
 
 def articles_to_db(list_of_dicts):
+<<<<<<< HEAD
   myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+=======
+  myclient = pymongo.MongoClient("mongodb://mongo:27017/")
+>>>>>>> deployment
   mydb = myclient["donortrackerdb"]
   mycol = mydb["article_results"]
 
