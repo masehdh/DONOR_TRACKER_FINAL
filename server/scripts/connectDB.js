@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectDB = () => {
-  mongoose.connect("mongodb://mongo:27017/donortrackerdb", {
+  mongoose.connect("mongodb://maseh:shareef@mongo:27017/donortrackerdb?authSource=admin", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

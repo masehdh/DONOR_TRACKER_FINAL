@@ -76,7 +76,6 @@ def list_to_csvs(scraper_results):
                 oldlinks2.append(result['link'])
 
 def mlat_scraper(dict_of_links, list_of_countries, filename = 'multilat'):
-  list_of_tables = []
   list_of_countries = [country.lower() for country in names]
   today = datetime.datetime.now()
   date = today.strftime("%m-%d-%y")
@@ -125,7 +124,7 @@ def mlat_scraper(dict_of_links, list_of_countries, filename = 'multilat'):
   #     dataframe.to_excel(writer, sheet_name=f'{mlat}-{date}', index=False)
 
 def articles_to_db(list_of_dicts):
-  myclient = pymongo.MongoClient("mongodb://mongo:27017/")
+  myclient = pymongo.MongoClient("mongodb://maseh:shareef@mongo:27017/?authSource=admin")
   mydb = myclient["donortrackerdb"]
   mycol = mydb["article_results"]
 
@@ -148,7 +147,7 @@ def articles_to_db(list_of_dicts):
 
 
 results = search_term_scraper(country_links, covid_terms)
-list_to_csvs(results)
+# list_to_csvs(results)
 articles_to_db(results)
-mlat_results = mlat_scraper(mlat_links, names)
+# mlat_results = mlat_scraper(mlat_links, names)
 # mlat_csv_maker(mlat_results)

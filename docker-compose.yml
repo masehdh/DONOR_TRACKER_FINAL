@@ -1,17 +1,22 @@
 version: '3'
 services:
+    mongo:
+        restart: always
+        container_name: mongo
+        image: mongo
+        ports:
+            - '27017:27017'
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=maseh
+            - MONGO_INITDB_ROOT_PASSWORD=shareef
     app:
         container_name: docker-node-mongo
         restart: always
         build: .
         ports:
             - '80:3000'
-        links:
-            - mongo
         volumes:
             - .:/usr/src/app
-    mongo:
-        container_name: mongo
-        image: mongo
-        ports:
-            - '27017:27017'
+            - /usr/src/app/node_modules
+        links:
+            - mongo
