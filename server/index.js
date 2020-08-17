@@ -5,6 +5,10 @@ require("dotenv/config");
 // Set up
 const app = express();
 
+// //Import Routes
+// const authRoute = require('../server/routes/auth');
+// app.use('/api/user', authRoute);
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

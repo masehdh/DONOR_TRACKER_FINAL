@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv/config");
 
 const connectDB = () => {
-  mongoose.connect("mongodb://maseh:shareef@mongo:27017/donortrackerdb?authSource=admin", {
+  mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/donortrackerdb?authSource=admin`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
